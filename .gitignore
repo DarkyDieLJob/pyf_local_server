@@ -1,0 +1,8 @@
+# .gitignore
+__pycache__/
+*.py[cod]
+local_server/local_server/settings.py
+venv/
+.env
+*.sqlite3
+
