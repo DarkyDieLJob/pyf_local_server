@@ -1,1 +1,9 @@
 django==4.0.6
+pytest
+faker
+pytest-django
+factory_boy
+django-dynamic-fixture
+djangorestframework
+django-cors-headers
+django-filter
