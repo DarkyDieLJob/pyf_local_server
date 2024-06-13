@@ -1,4 +1,4 @@
-django==4.0.6
+django
 pytest
 faker
 pytest-django
@@ -9,5 +9,5 @@ django-cors-headers
 django-filter
 python-dotenv
 virtualenv
-reactpy-django
+reactpy-django==3.8.1
 channels[daphne]

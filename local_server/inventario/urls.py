@@ -1,11 +1,12 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import ArticuloView, CodigoBarrasView, MiVista
+from .views import ArticuloView, CodigoBarrasView, MiVista, IndexView
 
 router = routers.DefaultRouter()
 router.register(r'articulos', ArticuloView, 'articulos')
 router.register(r'codigos_barras', CodigoBarrasView, 'codigos-barras')
 urlpatterns = [
     path('api/v1/', include(router.urls)),
-    path('mivista/', MiVista.as_view(), name='mi-vista')
+    path('', IndexView, name='index'),
+    path('mivista/', MiVista.as_view(), name='mi-vista'),
 ]

@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, filters
 from rest_framework.response import Response
@@ -37,3 +38,10 @@ class CodigoBarrasView(viewsets.ModelViewSet):
 
 class MiVista(TemplateView):
     template_name = 'template.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['saludo'] = 'la puta madre!!'
+        return context
+    
+def IndexView(request):
+    return render(request, 'template.html')
