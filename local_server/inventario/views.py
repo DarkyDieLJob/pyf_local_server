@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from .models import Articulo, CodigoBarras
 from rest_framework.pagination import PageNumberPagination
 from .serializers import ArticuloSerializer, CodigoBarrasSerializer
+from django.views.generic import TemplateView
 
 class ArticuloPagination(PageNumberPagination):
     page_size = 50  # Artículos por página
@@ -33,3 +34,6 @@ class CodigoBarrasView(viewsets.ModelViewSet):
         articulos = instance.Articulo.all()
         serializer = ArticuloSerializer(articulos, many=True)
         return Response(serializer.data)
+
+class MiVista(TemplateView):
+    template_name = 'template.html'

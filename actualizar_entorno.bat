@@ -8,6 +8,7 @@ IF NOT EXIST "venv\" (
 
 call venv\Scripts\activate
 python -m pip install --upgrade pip
+pip install reactpy-django 
 pip install -r requirements.txt
 echo.
 echo ¡Actualización completada!
