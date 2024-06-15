@@ -8,5 +8,5 @@ router.register(r'codigos_barras', CodigoBarrasView, 'codigos-barras')
 urlpatterns = [
     path('api/v1/', include(router.urls)),
     path('', IndexView, name='index'),
-    path('mivista/', MiVista.as_view(), name='mi-vista'),
+    path('listar_articulos/', MiVista.as_view(), name='listar-articulos'),
 ]

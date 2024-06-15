@@ -40,7 +40,7 @@ class MiVista(TemplateView):
     template_name = 'template.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['saludo'] = 'la puta madre!!'
+        context['titulo_tabla'] = 'Articulos!!'
         articulos = Articulo.objects.all()
         serializer = ArticuloSerializer(articulos, many=True)
         datos_limitados = [{campo: dato[campo] for campo in ['codigo','descripcion','precio_base']} for dato in serializer.data]

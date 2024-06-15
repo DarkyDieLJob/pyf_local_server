@@ -1,7 +1,8 @@
 {% load reactpy %}
 <!DOCTYPE html>
 <html>
+  {% component "utils.components.html.encabezado" %}
   <body>
-    {% component "inventario.components.hello_world" recipient=saludo datos=datos %}
+    {% component "inventario.components.listar_articulos" h2=titulo_tabla datos=datos %}
   </body>
 </html>

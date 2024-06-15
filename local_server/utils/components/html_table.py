@@ -1,19 +1,12 @@
 from reactpy import component, html
-
 @component
-def THead(datos: dict):
-    if datos:  # Verifica si 'datos' no está vacío
-        cols = datos[0].keys()
-    else:
-        cols = []
-
-
+def THead(titles: list):
     return html._(
             html.thead(
                 {
                 "className":"sticky-top",
             },
-            [html.th(key) for key in cols],
+            [html.th(key) for key in titles],
             )
         )
 
@@ -25,4 +18,14 @@ def TRow(datos: dict):
             html.tr(
             [html.td(value) for value in fila],
             )
+        )
+    
+@component
+def simple_table(titles,data):
+    return html.table(
+                {
+                "className":"table table-striped w-100",
+            },
+            THead(titles),
+            [TRow(fila) for fila in data]
         )
